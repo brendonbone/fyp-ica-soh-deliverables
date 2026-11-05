@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.ipynb text eol=lf
+*.parquet binary
+*.npz binary
+*.png binary
+*.pdf binary
+*.svg text eol=lf

@@ -1,0 +1,185 @@
+{
+  "dev_rows": {
+    "level": 59131,
+    "combined": 57452
+  },
+  "nonlinear_gap_threshold": 0.1,
+  "summary": {
+    "level": {
+      "n_features": 9,
+      "kendall_tau_pearson_vs_spearman": 0.8333333333333334,
+      "top3_pearson": [
+        "area25",
+        "area35",
+        "area"
+      ],
+      "top3_spearman": [
+        "area25",
+        "area35",
+        "area"
+      ],
+      "top9_overlap": 9,
+      "monotonic_not_linear": [
+        {
+          "feature": "slope_left",
+          "abs_r": 0.334,
+          "abs_rho": 0.611
+        },
+        {
+          "feature": "prominence",
+          "abs_r": 0.593,
+          "abs_rho": 0.753
+        }
+      ],
+      "biggest_climbers": [
+        {
+          "feature": "prominence",
+          "rank_shift": -1
+        },
+        {
+          "feature": "slope_left",
+          "rank_shift": -1
+        },
+        {
+          "feature": "height",
+          "rank_shift": -1
+        },
+        {
+          "feature": "area25",
+          "rank_shift": 0
+        }
+      ],
+      "biggest_fallers": [
+        {
+          "feature": "area",
+          "rank_shift": 0
+        },
+        {
+          "feature": "fwhm",
+          "rank_shift": 0
+        },
+        {
+          "feature": "slope_right",
+          "rank_shift": 1
+        },
+        {
+          "feature": "position",
+          "rank_shift": 2
+        }
+      ]
+    },
+    "combined": {
+      "n_features": 63,
+      "kendall_tau_pearson_vs_spearman": 0.8566308243727597,
+      "top3_pearson": [
+        "area25_rm20",
+        "area35_rm20",
+        "area_rm20"
+      ],
+      "top3_spearman": [
+        "area25_rm20",
+        "area35_rm20",
+        "area_rm20"
+      ],
+      "top9_overlap": 8,
+      "monotonic_not_linear": [
+        {
+          "feature": "slope_left",
+          "abs_r": 0.332,
+          "abs_rho": 0.608
+        },
+        {
+          "feature": "prominence_drift",
+          "abs_r": 0.379,
+          "abs_rho": 0.645
+        },
+        {
+          "feature": "prominence_slope20",
+          "abs_r": 0.062,
+          "abs_rho": 0.246
+        },
+        {
+          "feature": "slope_left_drift",
+          "abs_r": 0.212,
+          "abs_rho": 0.396
+        },
+        {
+          "feature": "slope_left_rm20",
+          "abs_r": 0.501,
+          "abs_rho": 0.662
+        },
+        {
+          "feature": "prominence_d20",
+          "abs_r": 0.038,
+          "abs_rho": 0.198
+        },
+        {
+          "feature": "prominence",
+          "abs_r": 0.593,
+          "abs_rho": 0.75
+        },
+        {
+          "feature": "height_slope20",
+          "abs_r": 0.112,
+          "abs_rho": 0.26
+        },
+        {
+          "feature": "height_d20",
+          "abs_r": 0.067,
+          "abs_rho": 0.208
+        },
+        {
+          "feature": "height_drift",
+          "abs_r": 0.559,
+          "abs_rho": 0.671
+        },
+        {
+          "feature": "prominence_slope10",
+          "abs_r": 0.024,
+          "abs_rho": 0.133
+        }
+      ],
+      "biggest_climbers": [
+        {
+          "feature": "prominence_slope20",
+          "rank_shift": -17
+        },
+        {
+          "feature": "prominence_d20",
+          "rank_shift": -15
+        },
+        {
+          "feature": "prominence_slope10",
+          "rank_shift": -12
+        },
+        {
+          "feature": "prominence_d10",
+          "rank_shift": -11
+        }
+      ],
+      "biggest_fallers": [
+        {
+          "feature": "position_slope10",
+          "rank_shift": 7
+        },
+        {
+          "feature": "area35_slope10",
+          "rank_shift": 7
+        },
+        {
+          "feature": "fwhm_drift",
+          "rank_shift": 8
+        },
+        {
+          "feature": "position_d10",
+          "rank_shift": 11
+        }
+      ]
+    }
+  },
+  "caveats": [
+    "rows are not independent (many cycles per cell): coefficients are ranking scores, not test statistics; no p-values are reported",
+    "Spearman captures monotonic, not general, dependence; mutual information is the selector for general dependence",
+    "both are univariate filters and ignore redundancy and complementarity"
+  ]
+}

@@ -1,0 +1,2062 @@
+{
+ "partitions": {
+  "lobo_b1": {
+   "kind": "lobo",
+   "n_dev_cells": 83,
+   "n_test_cells": 41,
+   "test_cells_by_batch": {
+    "b1": 41
+   }
+  },
+  "lobo_b2": {
+   "kind": "lobo",
+   "n_dev_cells": 81,
+   "n_test_cells": 43,
+   "test_cells_by_batch": {
+    "b2": 43
+   }
+  },
+  "lobo_b3": {
+   "kind": "lobo",
+   "n_dev_cells": 84,
+   "n_test_cells": 40,
+   "test_cells_by_batch": {
+    "b3": 40
+   }
+  },
+  "cv3_f0": {
+   "kind": "cv3",
+   "n_dev_cells": 82,
+   "n_test_cells": 42,
+   "test_cells_by_batch": {
+    "b1": 14,
+    "b2": 14,
+    "b3": 14
+   }
+  },
+  "cv3_f1": {
+   "kind": "cv3",
+   "n_dev_cells": 83,
+   "n_test_cells": 41,
+   "test_cells_by_batch": {
+    "b1": 14,
+    "b2": 14,
+    "b3": 13
+   }
+  },
+  "cv3_f2": {
+   "kind": "cv3",
+   "n_dev_cells": 83,
+   "n_test_cells": 41,
+   "test_cells_by_batch": {
+    "b1": 13,
+    "b2": 15,
+    "b3": 13
+   }
+  }
+ },
+ "spearman": {
+  "by_partition": {
+   "lobo_b1": {
+    "ranking": [
+     "height",
+     "prominence",
+     "area25",
+     "area35",
+     "area",
+     "slope_left",
+     "slope_right",
+     "position",
+     "fwhm"
+    ],
+    "scores": [
+     0.864871,
+     0.847996,
+     0.835136,
+     0.813029,
+     0.801542,
+     0.790103,
+     0.750287,
+     0.599804,
+     0.280117
+    ]
+   },
+   "lobo_b2": {
+    "ranking": [
+     "height",
+     "area25",
+     "prominence",
+     "area35",
+     "area",
+     "slope_left",
+     "position",
+     "slope_right",
+     "fwhm"
+    ],
+    "scores": [
+     0.823765,
+     0.823427,
+     0.8095,
+     0.79498,
+     0.777562,
+     0.6911,
+     0.688567,
+     0.663656,
+     0.219278
+    ]
+   },
+   "lobo_b3": {
+    "ranking": [
+     "area25",
+     "area35",
+     "area",
+     "height",
+     "prominence",
+     "position",
+     "slope_left",
+     "slope_right",
+     "fwhm"
+    ],
+    "scores": [
+     0.807754,
+     0.797022,
+     0.789024,
+     0.786332,
+     0.753438,
+     0.692435,
+     0.611032,
+     0.600332,
+     0.203304
+    ]
+   },
+   "cv3_f0": {
+    "ranking": [
+     "height",
+     "area25",
+     "prominence",
+     "area35",
+     "area",
+     "slope_left",
+     "slope_right",
+     "position",
+     "fwhm"
+    ],
+    "scores": [
+     0.810936,
+     0.806097,
+     0.78727,
+     0.786383,
+     0.775026,
+     0.681735,
+     0.657058,
+     0.612215,
+     0.251326
+    ]
+   },
+   "cv3_f1": {
+    "ranking": [
+     "area25",
+     "height",
+     "area35",
+     "area",
+     "prominence",
+     "slope_left",
+     "slope_right",
+     "position",
+     "fwhm"
+    ],
+    "scores": [
+     0.815643,
+     0.81056,
+     0.798839,
+     0.788603,
+     0.785638,
+     0.675494,
+     0.648494,
+     0.638961,
+     0.20396
+    ]
+   },
+   "cv3_f2": {
+    "ranking": [
+     "height",
+     "area25",
+     "prominence",
+     "area35",
+     "area",
+     "slope_left",
+     "slope_right",
+     "position",
+     "fwhm"
+    ],
+    "scores": [
+     0.839721,
+     0.831065,
+     0.825901,
+     0.806553,
+     0.792353,
+     0.71852,
+     0.693019,
+     0.633113,
+     0.243461
+    ]
+   }
+  },
+  "top1": {
+   "lobo_b1": "height",
+   "lobo_b2": "height",
+   "lobo_b3": "area25",
+   "cv3_f0": "height",
+   "cv3_f1": "area25",
+   "cv3_f2": "height"
+  },
+  "top3": {
+   "lobo_b1": [
+    "height",
+    "prominence",
+    "area25"
+   ],
+   "lobo_b2": [
+    "height",
+    "area25",
+    "prominence"
+   ],
+   "lobo_b3": [
+    "area25",
+    "area35",
+    "area"
+   ],
+   "cv3_f0": [
+    "height",
+    "area25",
+    "prominence"
+   ],
+   "cv3_f1": [
+    "area25",
+    "height",
+    "area35"
+   ],
+   "cv3_f2": [
+    "height",
+    "area25",
+    "prominence"
+   ]
+  },
+  "stability": {
+   "n": 6,
+   "kendall_tau_mean": 0.8074074074074075,
+   "kendall_tau_min": 0.5555555555555556,
+   "top3_jaccard_mean": 0.62
+  },
+  "stored_eng16_tau": {
+   "kendall_tau_mean": 0.8074074074074075,
+   "kendall_tau_min": 0.5555555555555556,
+   "n_partitions": 6
+  },
+  "top3_jaccard_vs_lobo_b3": {
+   "lobo_b1": 0.2,
+   "lobo_b2": 0.2,
+   "lobo_b3": 1.0,
+   "cv3_f0": 0.2,
+   "cv3_f1": 0.5,
+   "cv3_f2": 0.2
+  }
+ },
+ "be_level_stability": {
+  "n": 6,
+  "kendall_tau_mean": 0.3888888888888889,
+  "kendall_tau_min": -0.05555555555555555,
+  "top3_jaccard_mean": 0.42666666666666675
+ },
+ "be_grouped_stability": {
+  "n": 6,
+  "kendall_tau_mean": 0.36666666666666664,
+  "kendall_tau_min": -0.05555555555555555,
+  "top3_jaccard_mean": 0.44666666666666666
+ },
+ "backward_elimination": {
+  "level": {
+   "lobo_b1": {
+    "source": "direct BE (eng25 progress)",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.013060049951190731,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.013042268694034385,
+      "dropped": "height"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "position",
+       "area",
+       "area35",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01298833557558748,
+      "dropped": "area25"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.013032000206659625,
+      "dropped": "area35"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right"
+      ],
+      "cv": 0.013284776327860806,
+      "dropped": "prominence"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "position",
+       "area",
+       "slope_left",
+       "slope_right"
+      ],
+      "cv": 0.01453383739133619,
+      "dropped": "fwhm"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "position",
+       "area",
+       "slope_right"
+      ],
+      "cv": 0.016065306986716998,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "area",
+       "slope_right"
+      ],
+      "cv": 0.018556860321134856,
+      "dropped": "position"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "area"
+      ],
+      "cv": 0.02602088085159206,
+      "dropped": "slope_right"
+     }
+    ],
+    "drop_order": [
+     "height",
+     "area25",
+     "area35",
+     "prominence",
+     "fwhm",
+     "slope_left",
+     "position",
+     "slope_right"
+    ],
+    "elimination_ranking": [
+     "area",
+     "slope_right",
+     "position",
+     "slope_left",
+     "fwhm",
+     "prominence",
+     "area35",
+     "area25",
+     "height"
+    ],
+    "last_standing": "area",
+    "last_two": [
+     "area",
+     "slope_right"
+    ],
+    "last_three": [
+     "position",
+     "area",
+     "slope_right"
+    ],
+    "n_fits": 44
+   },
+   "lobo_b2": {
+    "source": "direct BE (eng25 progress)",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.014908562619493795,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "height",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.014868369670201572,
+      "dropped": "position"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.014784788270068568,
+      "dropped": "height"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "area",
+       "area35",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01481029468448381,
+      "dropped": "area25"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "area",
+       "area35",
+       "fwhm",
+       "slope_left",
+       "slope_right"
+      ],
+      "cv": 0.015001198257514354,
+      "dropped": "prominence"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right"
+      ],
+      "cv": 0.015407275618522367,
+      "dropped": "area35"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "area",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.016216452574565336,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "area",
+       "slope_right"
+      ],
+      "cv": 0.018232555554189175,
+      "dropped": "fwhm"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "area"
+      ],
+      "cv": 0.02451468206329837,
+      "dropped": "slope_right"
+     }
+    ],
+    "drop_order": [
+     "position",
+     "height",
+     "area25",
+     "prominence",
+     "area35",
+     "slope_left",
+     "fwhm",
+     "slope_right"
+    ],
+    "elimination_ranking": [
+     "area",
+     "slope_right",
+     "fwhm",
+     "slope_left",
+     "area35",
+     "prominence",
+     "area25",
+     "height",
+     "position"
+    ],
+    "last_standing": "area",
+    "last_two": [
+     "area",
+     "slope_right"
+    ],
+    "last_three": [
+     "area",
+     "fwhm",
+     "slope_right"
+    ],
+    "n_fits": 44
+   },
+   "lobo_b3": {
+    "source": "direct BE (eng25 progress)",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.02015614698106222,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.020132113673193498,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area25",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.02015312939242287,
+      "dropped": "area35"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "position",
+       "area",
+       "area25",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.020222629676100293,
+      "dropped": "height"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "position",
+       "area",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.02039122776079943,
+      "dropped": "area25"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "position",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.02075749977148427,
+      "dropped": "area"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "position",
+       "fwhm",
+       "prominence"
+      ],
+      "cv": 0.022333739347650233,
+      "dropped": "slope_right"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "fwhm",
+       "prominence"
+      ],
+      "cv": 0.023638023785224387,
+      "dropped": "position"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "prominence"
+      ],
+      "cv": 0.029985585092459216,
+      "dropped": "fwhm"
+     }
+    ],
+    "drop_order": [
+     "slope_left",
+     "area35",
+     "height",
+     "area25",
+     "area",
+     "slope_right",
+     "position",
+     "fwhm"
+    ],
+    "elimination_ranking": [
+     "prominence",
+     "fwhm",
+     "position",
+     "slope_right",
+     "area",
+     "area25",
+     "height",
+     "area35",
+     "slope_left"
+    ],
+    "last_standing": "prominence",
+    "last_two": [
+     "fwhm",
+     "prominence"
+    ],
+    "last_three": [
+     "position",
+     "fwhm",
+     "prominence"
+    ],
+    "n_fits": 44
+   },
+   "cv3_f0": {
+    "source": "direct BE (eng25 progress)",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.0183554233701795,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.018282986804781493,
+      "dropped": "height"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "position",
+       "area",
+       "area35",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01828278470923931,
+      "dropped": "area25"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "position",
+       "area35",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01835723435316506,
+      "dropped": "area"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "position",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.018444856829487852,
+      "dropped": "area35"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "position",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.018964322362582185,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.019829418446344105,
+      "dropped": "position"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "fwhm",
+       "prominence"
+      ],
+      "cv": 0.02096029306219168,
+      "dropped": "slope_right"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "prominence"
+      ],
+      "cv": 0.026161913751565697,
+      "dropped": "fwhm"
+     }
+    ],
+    "drop_order": [
+     "height",
+     "area25",
+     "area",
+     "area35",
+     "slope_left",
+     "position",
+     "slope_right",
+     "fwhm"
+    ],
+    "elimination_ranking": [
+     "prominence",
+     "fwhm",
+     "slope_right",
+     "position",
+     "slope_left",
+     "area35",
+     "area",
+     "area25",
+     "height"
+    ],
+    "last_standing": "prominence",
+    "last_two": [
+     "fwhm",
+     "prominence"
+    ],
+    "last_three": [
+     "fwhm",
+     "slope_right",
+     "prominence"
+    ],
+    "n_fits": 44
+   },
+   "cv3_f1": {
+    "source": "direct BE (eng25 progress)",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01815263940407296,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01799286127653781,
+      "dropped": "height"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "position",
+       "area",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01801313443972482,
+      "dropped": "area35"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01810177452741947,
+      "dropped": "area25"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "position",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01827418676901275,
+      "dropped": "area"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "position",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.018483991125783767,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.019462480297690588,
+      "dropped": "position"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "fwhm",
+       "prominence"
+      ],
+      "cv": 0.02046683017837721,
+      "dropped": "slope_right"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "prominence"
+      ],
+      "cv": 0.025605418972183124,
+      "dropped": "fwhm"
+     }
+    ],
+    "drop_order": [
+     "height",
+     "area35",
+     "area25",
+     "area",
+     "slope_left",
+     "position",
+     "slope_right",
+     "fwhm"
+    ],
+    "elimination_ranking": [
+     "prominence",
+     "fwhm",
+     "slope_right",
+     "position",
+     "slope_left",
+     "area",
+     "area25",
+     "area35",
+     "height"
+    ],
+    "last_standing": "prominence",
+    "last_two": [
+     "fwhm",
+     "prominence"
+    ],
+    "last_three": [
+     "fwhm",
+     "slope_right",
+     "prominence"
+    ],
+    "n_fits": 44
+   },
+   "cv3_f2": {
+    "source": "direct BE (eng25 progress)",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.016555841286846278,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.016493581389431695,
+      "dropped": "height"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "position",
+       "area",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01649375422048229,
+      "dropped": "area35"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01654336401463426,
+      "dropped": "area25"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right"
+      ],
+      "cv": 0.016650003006304204,
+      "dropped": "prominence"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "position",
+       "area",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.017277756781153165,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "position",
+       "area",
+       "slope_right"
+      ],
+      "cv": 0.01884510147993626,
+      "dropped": "fwhm"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "area",
+       "slope_right"
+      ],
+      "cv": 0.020197639591141958,
+      "dropped": "position"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "area"
+      ],
+      "cv": 0.02671570112555225,
+      "dropped": "slope_right"
+     }
+    ],
+    "drop_order": [
+     "height",
+     "area35",
+     "area25",
+     "prominence",
+     "slope_left",
+     "fwhm",
+     "position",
+     "slope_right"
+    ],
+    "elimination_ranking": [
+     "area",
+     "slope_right",
+     "position",
+     "fwhm",
+     "slope_left",
+     "prominence",
+     "area25",
+     "area35",
+     "height"
+    ],
+    "last_standing": "area",
+    "last_two": [
+     "area",
+     "slope_right"
+    ],
+    "last_three": [
+     "position",
+     "area",
+     "slope_right"
+    ],
+    "n_fits": 44
+   }
+  },
+  "grouped": {
+   "lobo_b1": {
+    "source": "direct BE (eng25 progress)",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01233348612899082,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.012128311979413664,
+      "dropped": "area25"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.012025037315267884,
+      "dropped": "area35"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.011849743210079164,
+      "dropped": "height"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right"
+      ],
+      "cv": 0.011862483959692558,
+      "dropped": "prominence"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "position",
+       "area",
+       "slope_left",
+       "slope_right"
+      ],
+      "cv": 0.012107422646748151,
+      "dropped": "fwhm"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "position",
+       "area",
+       "slope_right"
+      ],
+      "cv": 0.012664171787791334,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "area",
+       "slope_right"
+      ],
+      "cv": 0.014043992340718386,
+      "dropped": "position"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "slope_right"
+      ],
+      "cv": 0.016833164680570337,
+      "dropped": "area"
+     }
+    ],
+    "drop_order": [
+     "area25",
+     "area35",
+     "height",
+     "prominence",
+     "fwhm",
+     "slope_left",
+     "position",
+     "area"
+    ],
+    "elimination_ranking": [
+     "slope_right",
+     "area",
+     "position",
+     "slope_left",
+     "fwhm",
+     "prominence",
+     "height",
+     "area35",
+     "area25"
+    ],
+    "last_standing": "slope_right",
+    "last_two": [
+     "area",
+     "slope_right"
+    ],
+    "last_three": [
+     "position",
+     "area",
+     "slope_right"
+    ],
+    "n_fits": 44
+   },
+   "lobo_b2": {
+    "source": "direct BE (eng25 progress)",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.012010594398859428,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01139657659139603,
+      "dropped": "area25"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "height",
+       "area",
+       "area35",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.011099345465324869,
+      "dropped": "position"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "height",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.010949228617232125,
+      "dropped": "area35"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.010890946633581935,
+      "dropped": "height"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "area",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.010862448304664072,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "area",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.01111348880967427,
+      "dropped": "prominence"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.01314230773497083,
+      "dropped": "area"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "slope_right"
+      ],
+      "cv": 0.018066029995227016,
+      "dropped": "fwhm"
+     }
+    ],
+    "drop_order": [
+     "area25",
+     "position",
+     "area35",
+     "height",
+     "slope_left",
+     "prominence",
+     "area",
+     "fwhm"
+    ],
+    "elimination_ranking": [
+     "slope_right",
+     "fwhm",
+     "area",
+     "prominence",
+     "slope_left",
+     "height",
+     "area35",
+     "position",
+     "area25"
+    ],
+    "last_standing": "slope_right",
+    "last_two": [
+     "fwhm",
+     "slope_right"
+    ],
+    "last_three": [
+     "area",
+     "fwhm",
+     "slope_right"
+    ],
+    "n_fits": 44
+   },
+   "lobo_b3": {
+    "source": "read off the ENG-23 table",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.018166465512763907,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.017889196963727833,
+      "dropped": "area25"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.017747291927684084,
+      "dropped": "area35"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.017751045741134622,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.017809638483093602,
+      "dropped": "prominence"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "height",
+       "area",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.01818220019189969,
+      "dropped": "position"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "height",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.018057391915798394,
+      "dropped": "area"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "height",
+       "fwhm"
+      ],
+      "cv": 0.01845570107869882,
+      "dropped": "slope_right"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "height"
+      ],
+      "cv": 0.020391299205003478,
+      "dropped": "fwhm"
+     }
+    ],
+    "drop_order": [
+     "area25",
+     "area35",
+     "slope_left",
+     "prominence",
+     "position",
+     "area",
+     "slope_right",
+     "fwhm"
+    ],
+    "elimination_ranking": [
+     "height",
+     "fwhm",
+     "slope_right",
+     "area",
+     "position",
+     "prominence",
+     "slope_left",
+     "area35",
+     "area25"
+    ],
+    "last_standing": "height",
+    "last_two": [
+     "height",
+     "fwhm"
+    ],
+    "last_three": [
+     "height",
+     "fwhm",
+     "slope_right"
+    ],
+    "n_fits": 0
+   },
+   "cv3_f0": {
+    "source": "direct BE (eng25 progress)",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.015593055869947173,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.015553451962835727,
+      "dropped": "area25"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.015353743219285437,
+      "dropped": "area35"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right"
+      ],
+      "cv": 0.015121915707223984,
+      "dropped": "prominence"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.015168763567818235,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "height",
+       "position",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.015160445285821226,
+      "dropped": "area"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "height",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.015686308937825272,
+      "dropped": "position"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "height",
+       "fwhm"
+      ],
+      "cv": 0.016573641539360952,
+      "dropped": "slope_right"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "height"
+      ],
+      "cv": 0.018080338634766022,
+      "dropped": "fwhm"
+     }
+    ],
+    "drop_order": [
+     "area25",
+     "area35",
+     "prominence",
+     "slope_left",
+     "area",
+     "position",
+     "slope_right",
+     "fwhm"
+    ],
+    "elimination_ranking": [
+     "height",
+     "fwhm",
+     "slope_right",
+     "position",
+     "area",
+     "slope_left",
+     "prominence",
+     "area35",
+     "area25"
+    ],
+    "last_standing": "height",
+    "last_two": [
+     "height",
+     "fwhm"
+    ],
+    "last_three": [
+     "height",
+     "fwhm",
+     "slope_right"
+    ],
+    "n_fits": 44
+   },
+   "cv3_f1": {
+    "source": "direct BE (eng25 progress)",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.017187241076831776,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01690203465581931,
+      "dropped": "area25"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01668674743111676,
+      "dropped": "area35"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.016641028913320668,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "position",
+       "area",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.016665573379369563,
+      "dropped": "height"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "position",
+       "area",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.01666623606325392,
+      "dropped": "prominence"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "area",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.01698819072375035,
+      "dropped": "position"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "area",
+       "slope_right"
+      ],
+      "cv": 0.017653878800713216,
+      "dropped": "fwhm"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "area"
+      ],
+      "cv": 0.020193631290699898,
+      "dropped": "slope_right"
+     }
+    ],
+    "drop_order": [
+     "area25",
+     "area35",
+     "slope_left",
+     "height",
+     "prominence",
+     "position",
+     "fwhm",
+     "slope_right"
+    ],
+    "elimination_ranking": [
+     "area",
+     "slope_right",
+     "fwhm",
+     "position",
+     "prominence",
+     "height",
+     "slope_left",
+     "area35",
+     "area25"
+    ],
+    "last_standing": "area",
+    "last_two": [
+     "area",
+     "slope_right"
+    ],
+    "last_three": [
+     "area",
+     "fwhm",
+     "slope_right"
+    ],
+    "n_fits": 44
+   },
+   "cv3_f2": {
+    "source": "direct BE (eng25 progress)",
+    "steps": [
+     {
+      "k": 9,
+      "blocks": [
+       "height",
+       "position",
+       "area",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.014016050172523498,
+      "dropped": null,
+      "cv_source": "eng15_cells.json Pearson x RF k-curve (Pearson order)"
+     },
+     {
+      "k": 8,
+      "blocks": [
+       "height",
+       "position",
+       "area35",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.013979286058815866,
+      "dropped": "area"
+     },
+     {
+      "k": 7,
+      "blocks": [
+       "height",
+       "position",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.014018136483103507,
+      "dropped": "area35"
+     },
+     {
+      "k": 6,
+      "blocks": [
+       "position",
+       "area25",
+       "fwhm",
+       "slope_left",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.014090601489758187,
+      "dropped": "height"
+     },
+     {
+      "k": 5,
+      "blocks": [
+       "position",
+       "area25",
+       "fwhm",
+       "slope_right",
+       "prominence"
+      ],
+      "cv": 0.01415419121052923,
+      "dropped": "slope_left"
+     },
+     {
+      "k": 4,
+      "blocks": [
+       "position",
+       "area25",
+       "fwhm",
+       "slope_right"
+      ],
+      "cv": 0.014388327713164315,
+      "dropped": "prominence"
+     },
+     {
+      "k": 3,
+      "blocks": [
+       "position",
+       "area25",
+       "slope_right"
+      ],
+      "cv": 0.014972853792350842,
+      "dropped": "fwhm"
+     },
+     {
+      "k": 2,
+      "blocks": [
+       "area25",
+       "slope_right"
+      ],
+      "cv": 0.016276726562659223,
+      "dropped": "position"
+     },
+     {
+      "k": 1,
+      "blocks": [
+       "area25"
+      ],
+      "cv": 0.018917485547730116,
+      "dropped": "slope_right"
+     }
+    ],
+    "drop_order": [
+     "area",
+     "area35",
+     "height",
+     "slope_left",
+     "prominence",
+     "fwhm",
+     "position",
+     "slope_right"
+    ],
+    "elimination_ranking": [
+     "area25",
+     "slope_right",
+     "position",
+     "fwhm",
+     "prominence",
+     "slope_left",
+     "height",
+     "area35",
+     "area"
+    ],
+    "last_standing": "area25",
+    "last_two": [
+     "area25",
+     "slope_right"
+    ],
+    "last_three": [
+     "position",
+     "area25",
+     "slope_right"
+    ],
+    "n_fits": 44
+   }
+  }
+ },
+ "check_lobo_b3_vs_eng19_table": {
+  "same_subset_each_step": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "max_abs_cv_diff": 9.71445146547012e-17,
+  "first_two_steps_match": true,
+  "all_steps_match": true
+ },
+ "env": {
+  "host": "Main_Laptop",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.14.4",
+  "numpy": "2.4.4",
+  "pandas": "3.0.2",
+  "scipy": "1.17.1",
+  "sklearn": "1.8.0",
+  "joblib": "1.5.3",
+  "cpu_count": 24,
+  "history_table": "computed (features_temporal)"
+ }
+}

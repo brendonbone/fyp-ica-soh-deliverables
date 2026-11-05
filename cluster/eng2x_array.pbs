@@ -1,0 +1,52 @@
+#!/bin/bash
+#PBS -N eng2x
+#PBS -l select=1:ncpus=8:mem=32gb
+#PBS -l walltime=06:00:00
+#PBS -M z5482679@ad.unsw.edu.au
+#PBS -m ae
+#PBS -j oe
+#PBS -o cluster/logs/
+
+# Job array for the long searches (stages 14, 15, 16: ENG-22/24/23 shards)
+# and the per-partition eliminations (stage 17: ENG-25 tasks). Each subjob
+# runs one shard (or one stage-17 task) and writes its own progress file
+# under results/, so subjobs never touch each other's files and a killed
+# subjob resumes where it stopped when the array is resubmitted.
+#
+#   qsub -J 0-7  -v STAGE=s14_history_components,NSHARDS=8         -N s14 cluster/eng2x_array.pbs
+#   qsub -J 0-7  -v STAGE=s15_level_subsets_history_rows,NSHARDS=8 -N s15 cluster/eng2x_array.pbs
+#   qsub -J 0-31 -l walltime=03:00:00 -v STAGE=s16_history_subsets,NSHARDS=32 -N s16 cluster/eng2x_array.pbs
+#   qsub -J 0-10 -v STAGE=s17_partition_elimination,NSHARDS=0      -N s17 cluster/eng2x_array.pbs
+#
+# NSHARDS=0 passes --task $PBS_ARRAY_INDEX (stage 17's eleven mode x
+# partition tasks) instead of --shard/--n-shards. Submit from the repository
+# root. Merge and analyse the shards on the laptop (cluster/README.md).
+
+set -euo pipefail
+cd "$PBS_O_WORKDIR"
+mkdir -p cluster/logs
+: "${STAGE:?give the stage module, e.g. qsub -J 0-31 -v STAGE=s16_history_subsets,NSHARDS=32 ...}"
+: "${NSHARDS:?give NSHARDS (the array size, or 0 for the stage-17 tasks)}"
+
+module load python/3.13.2
+source "${VENV:-/srv/scratch/$USER/envs/fyp313}/bin/activate"
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+# Use the laptop-computed history table so the inputs are bit-identical
+# (src/subset_search.py, HISTORY_TABLE_ENV): stage 8 writes it on the laptop,
+# copy it across with the code.
+export FYP_HISTORY_TABLE=results/features_history.parquet
+test -f "$FYP_HISTORY_TABLE" || {
+    echo "$FYP_HISTORY_TABLE missing: run stage 8 on the laptop and copy the file here" >&2
+    exit 1
+}
+
+I=${PBS_ARRAY_INDEX:-0}
+echo "host=$(hostname) stage=$STAGE index=$I nshards=$NSHARDS ncpus=${NCPUS:-?} started=$(date)"
+
+if [ "$NSHARDS" = "0" ]; then
+    python -u -m "stages.$STAGE" --task "$I" --n-jobs "${NCPUS:-8}" 2>&1 | tee "cluster/logs/${PBS_JOBNAME}_${I}.live"
+else
+    python -u -m "stages.$STAGE" --shard "$I" --n-shards "$NSHARDS" --n-jobs "${NCPUS:-8}" 2>&1 | tee "cluster/logs/${PBS_JOBNAME}_${I}.live"
+fi
+
+echo "finished=$(date)"

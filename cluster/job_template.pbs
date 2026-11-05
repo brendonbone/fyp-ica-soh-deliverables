@@ -1,0 +1,32 @@
+#!/bin/bash
+#PBS -N stage
+#PBS -l select=1:ncpus=8:mem=32gb
+#PBS -l walltime=12:00:00
+#PBS -M z5482679@ad.unsw.edu.au
+#PBS -m ae
+#PBS -j oe
+#PBS -o cluster/logs/
+
+# One stage of run_results.py as a single job. Submit from the repository root:
+#
+#   qsub -v STAGE=s02_extract_features -N s02 cluster/job_template.pbs
+#   qsub -v STAGE=s08_history_features,ARGS="--jobs 2" -N s08 cluster/job_template.pbs
+#
+# Rule of thumb: ~4 GB of memory per core requested. Asking for much more
+# than that, or walltime > 12 h, means a longer wait in the queue. Stages 1,
+# 2, 3 and 10 load the raw pickles (about 8 GB of RAM) from data/, a symlink
+# into scratch (or set ICA_SOH_DATA; see cluster/README.md).
+
+set -euo pipefail
+cd "$PBS_O_WORKDIR"
+mkdir -p cluster/logs
+: "${STAGE:?give the stage module, e.g. qsub -v STAGE=s02_extract_features ...}"
+
+module load python/3.13.2
+source "${VENV:-/srv/scratch/$USER/envs/fyp313}/bin/activate"
+
+echo "host=$(hostname) stage=$STAGE args=${ARGS:-} ncpus=${NCPUS:-?} started=$(date)"
+
+python -u -m "stages.$STAGE" ${ARGS:-} 2>&1 | tee "cluster/logs/${PBS_JOBNAME}.live"
+
+echo "finished=$(date)"

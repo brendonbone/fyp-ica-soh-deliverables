@@ -1,0 +1,7 @@
+model,features,k,dev_cv_rmse,fold_sd,seed_sd,n_models,dev_cv_r2,rel_vs_interim,runs,source
+"Interim model: RF, untuned","height, position, area",3,0.023021508827003344,0.001063573974977401,,1,0.8005810845708761,,"seed 0, pool order",results/eng00_baseline.json
+Linear regression,all nine,9,0.02729143730724473,0.0040765319926028155,,1,0.7137303494815219,0.18547561379786393,deterministic,results/eng06_simple_baselines.json
+"GPR, untuned (RBF)",all nine,9,0.020462585140348283,0.0014940469017616707,,1,0.8418231807152982,-0.11115360447850149,seed 0 (2000-row subsample),results/eng07_gpr.json
+"GPR, tuned (Matérn ν = 1.5)",all nine,9,0.020284706690053177,0.0015289469356238267,,1,0.844494967308344,-0.11888022446817226,seed 0 (2000-row subsample),results/eng08_full_tuned.json grid['pearson|gpr'] k=9
+"RF, untuned",all nine,9,0.020143879106544676,0.0015778952007628015,2.0863442043531763e-05,20,0.8465723567196923,-0.1249974422650925,"seeds 0-9 x {pool, Pearson} order",results/eng20_reference_seeds.json
+"RF, tuned (reference)",all nine,9,0.020010616881343524,0.0014201597851843544,1.6094585040430847e-05,20,0.8487793920414491,-0.13078603875555536,"seeds 0-9 x {pool, Pearson} order",results/eng20_reference_seeds.json

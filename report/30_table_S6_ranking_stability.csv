@@ -1,0 +1,10 @@
+pool,method,kendall_tau_mean,kendall_tau_min,top3_jaccard_mean,top1_lobo_b1,top1_lobo_b2,top1_lobo_b3,top1_cv3_f0,top1_cv3_f1,top1_cv3_f2,source
+level,pearson,0.9703703703703704,0.9444444444444445,1.0,area25,area25,area25,area25,area25,area25,results/eng15_cells.json (rankings); results/eng15_split_robustness.json: summary
+level,spearman,0.8074074074074075,0.5555555555555556,0.62,height,height,area25,height,area25,height,results/eng25_partition_robustness.json: spearman
+level,mutual_info,0.914814814814815,0.8333333333333334,1.0,prominence,height,prominence,prominence,prominence,prominence,results/eng15_cells.json (rankings); results/eng15_split_robustness.json: summary
+level,rf_importance,0.6148148148148148,0.3888888888888889,0.5933333333333334,height,area25,area25,height,height,height,results/eng15_cells.json (rankings); results/eng15_split_robustness.json: summary
+level,permutation,0.488888888888889,0.2777777777777778,0.41333333333333333,height,height,area25,height,height,height,results/eng15_cells.json (rankings); results/eng15_split_robustness.json: summary
+combined,pearson,0.9651135005973716,0.9406041986687147,0.48666666666666664,slope_right_rm20,area25_rm20,area25_rm20,area25_rm20,area25_rm20,area25_rm20,results/eng15_cells.json (rankings); results/eng15_split_robustness.json: summary
+combined,mutual_info,0.9227854582693291,0.8525345622119815,1.0,height_rm20,height_rm20,area25_rm20,height_rm20,height_rm20,height_rm20,results/eng15_cells.json (rankings); results/eng15_split_robustness.json: summary
+combined,rf_importance,0.8396313364055299,0.7275985663082437,0.6333333333333333,slope_right_rm20,area25_rm20,area25_rm20,area25_rm20,area25_rm20,slope_right_rm20,results/eng15_cells.json (rankings); results/eng15_split_robustness.json: summary
+combined,permutation,0.6269670592251235,0.4726062467997951,0.5466666666666666,slope_right_rm20,area25_rm20,area25_rm20,slope_right_rm20,area25_rm20,area25_rm20,results/eng15_cells.json (rankings); results/eng15_split_robustness.json: summary

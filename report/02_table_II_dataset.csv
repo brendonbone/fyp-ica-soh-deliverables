@@ -1,0 +1,5 @@
+batch,role,cells,recorded_cycles,clean_cycles,charge_policies,mean_cycle_life
+b1,development,41,37734,37650,22,921.3414634146342
+b2,development,43,21527,21481,41,473.2093023255814
+b3,held-out test,40,41240,41200,8,1032.0
+Total,,124,100501,100331,69,801.6370967741935

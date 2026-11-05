@@ -1,0 +1,51 @@
+{
+  "n_cells": 124,
+  "n_rows": 100501,
+  "baseline_identical": true,
+  "overall_fail_rate": 0.0004179062894896568,
+  "worst_cells": {
+    "b2c27": 0.00202020202020202,
+    "b1c20": 0.001876172607879925,
+    "b1c21": 0.0017921146953405018,
+    "b1c45": 0.0016722408026755853,
+    "b1c44": 0.0016260162601626016
+  },
+  "status_counts": {
+    "ok": 100459,
+    "bad_dqdv": 41,
+    "no_peak": 1
+  },
+  "nan_in_ok_rows": {
+    "height": 0,
+    "position": 0,
+    "area": 0,
+    "area35": 0,
+    "area25": 0,
+    "fwhm": 0,
+    "slope_left": 0,
+    "slope_right": 0,
+    "prominence": 0
+  },
+  "second_peak_coverage": {
+    "height2": 0.36264545735076004,
+    "position2": 0.36264545735076004,
+    "prom2": 0.36264545735076004,
+    "peak_sep": 0.36264545735076004,
+    "n_peaks2": 1.0,
+    "tail_prom2": 0.9999402741416896,
+    "tail_position2": 0.9999402741416896
+  },
+  "recompute_coverage": {
+    "rc_prom2": 0.0013836490508565683,
+    "rc_position2": 0.0013836490508565683,
+    "rc_n_peaks2": 1.0,
+    "rc_pearson_r": 1.0,
+    "rc_rms_diff": 1.0
+  },
+  "rc_pearson_r": {
+    "median": 0.9968831183416662,
+    "p05": 0.9508029875085889,
+    "min": 0.11559939383330707
+  },
+  "verdict": "PASS"
+}

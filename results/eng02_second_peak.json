@@ -1,0 +1,54 @@
+{
+  "agreement_recomputed_vs_published": {
+    "n_cycles_with_recompute": 100459,
+    "pearson_r_median": 0.9968831183416662,
+    "pearson_r_p05": 0.9508029875085889,
+    "pearson_r_p01": 0.878659633858469,
+    "pearson_r_min": 0.11559939383330707,
+    "frac_r_above_0.95": 0.9510546591146637
+  },
+  "second_peak": {
+    "search_region_V": [
+      2.7,
+      3.4
+    ],
+    "resolvable_prominence_threshold": 0.3,
+    "pct_cycles_resolvable_published": 0.006798793537662131,
+    "pct_cycles_resolvable_recomputed": 0.0003981723887357031,
+    "threshold_sweep": {
+      "0.02": {
+        "published_smoothed": 0.36264545735076004,
+        "recomputed": 0.0013836490508565683
+      },
+      "0.05": {
+        "published_smoothed": 0.03371524701619566,
+        "recomputed": 0.0008560706357817617
+      },
+      "0.1": {
+        "published_smoothed": 0.01169631391911128,
+        "recomputed": 0.0006171672025403398
+      },
+      "0.2": {
+        "published_smoothed": 0.008252122756547447,
+        "recomputed": 0.00047780686648284375
+      },
+      "0.3": {
+        "published_smoothed": 0.006798793537662131,
+        "recomputed": 0.0003981723887357031
+      }
+    },
+    "n_cells_with_any_resolvable": 26,
+    "prom2_median": 0.029435891020590757,
+    "prom2_p99": 2.4768935262903637,
+    "position2_quantiles_at_0.1": {
+      "0.25": 3.075075075075075,
+      "0.5": 3.093093093093093,
+      "0.75": 3.1126126126126126
+    }
+  },
+  "tail_artifact_below_2.7V": {
+    "pct_cycles_with_tail_candidate": 0.9999402741416896,
+    "pct_tail_prom_above_0.3": 0.025244129445843578,
+    "tail_position_median": 2.3828828828828827
+  }
+}

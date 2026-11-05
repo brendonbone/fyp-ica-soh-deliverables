@@ -1,0 +1,10 @@
+k,level_subset,level_dev_cv,level_b3,history_subset,history_dev_cv,history_b3
+1,area25,0.029575825176091548,0.02279935080351283,height,0.020391299205003478,0.013229850240197955
+2,height + fwhm,0.023882884167620397,0.01672059521733254,height + fwhm,0.01845570107869882,0.016970744456010673
+3,height + position + fwhm,0.022515824093670894,0.016403530845145724,height + fwhm + slope_right,0.018057391915798394,0.016718055055491093
+4,position + fwhm + slope_right + prominence,0.02102831648945969,0.017788939409520522,height + fwhm + slope_left + slope_right,0.017995984703376218,0.015164312465049764
+5,position + area + fwhm + slope_right + prominence,0.02064529918200101,0.016567427732113053,height + position + area + fwhm + slope_right,0.017809638483093602,0.01603185798683557
+6,position + area + area25 + fwhm + slope_right + prominence,0.02044046410720196,0.01650796379643127,height + position + area + fwhm + slope_right + prominence,0.017751045741134622,0.015827340201786888
+7,height + position + area + area25 + fwhm + slope_right + prominence,0.020386035386287377,0.016515894335440946,height + position + area + fwhm + slope_left + slope_right + prominence,0.017747291927684084,0.0150908400312291
+8,height + position + area + area35 + area25 + fwhm + slope_right + prominence,0.020363899265193636,0.016522612614427397,height + position + area + area35 + fwhm + slope_left + slope_right + prominence,0.017889196963727833,0.014079749845104133
+9,all nine,0.02038113639082132,0.016200215784828196,all nine (63 columns),0.018170781122729632,0.014132058949115985

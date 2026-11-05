@@ -1,0 +1,10 @@
+{
+  "rf": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "max_features": 0.5
+  },
+  "gpr": {
+    "kernel_name": "matern15"
+  }
+}

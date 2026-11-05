@@ -1,0 +1,18 @@
+group,measure,value,unit,source
+"Recomputed vs published dQ/dV (LFP, 4C)",Cycles compared (every status-ok cycle),100459.0,cycles,results/eng02_second_peak.json: agreement_recomputed_vs_published
+"Recomputed vs published dQ/dV (LFP, 4C)",Per-cycle Pearson r: median,0.9968831183416662,r,results/eng02_second_peak.json
+"Recomputed vs published dQ/dV (LFP, 4C)",Per-cycle Pearson r: 5th percentile,0.9508029875085889,r,results/eng02_second_peak.json
+"Recomputed vs published dQ/dV (LFP, 4C)",Per-cycle Pearson r: 1st percentile,0.878659633858469,r,results/eng02_second_peak.json
+"Recomputed vs published dQ/dV (LFP, 4C)",Per-cycle Pearson r: minimum,0.11559939383330707,r,results/eng02_second_peak.json
+"Recomputed vs published dQ/dV (LFP, 4C)",Cycles with r > 0.95,0.9510546591146637,share,results/eng02_second_peak.json
+"Second peak in 2.7–3.4 V (LFP, 4C)",Any second local maximum (prominence ≥ 0.02 Ah/V),0.36264545735076004,share,results/eng02_second_peak.json: second_peak.threshold_sweep
+"Second peak in 2.7–3.4 V (LFP, 4C)",Prominence ≥ 0.1 Ah/V,0.01169631391911128,share,results/eng02_second_peak.json
+"Second peak in 2.7–3.4 V (LFP, 4C)",Prominence ≥ 0.3 Ah/V (the standard of the main peak),0.006798793537662131,share,results/eng02_second_peak.json
+"Second peak in 2.7–3.4 V (LFP, 4C)",Prominence ≥ 0.3 Ah/V on the recomputed curve,0.0003981723887357031,share,results/eng02_second_peak.json
+"Second peak in 2.7–3.4 V (LFP, 4C)",Cells with at least one cycle ≥ 0.3 Ah/V,26.0,cells,results/eng02_second_peak.json
+"Second peak in 2.7–3.4 V (LFP, 4C)",Cells with at least one cycle ≥ 0.1 Ah/V,35.0,cells,results/features_expanded.parquet
+"Second peak in 2.7–3.4 V (LFP, 4C)","Position of the second peak, cycles ≥ 0.1 Ah/V (median, IQR)",3.093093093093093,V,results/eng02_second_peak.json
+"Largest maximum below 2.7 V (LFP, 4C; not searched)",Any local maximum (prominence ≥ 0.02 Ah/V),0.9999402741416896,share,results/eng02_second_peak.json: tail_artifact_below_2.7V
+"Largest maximum below 2.7 V (LFP, 4C; not searched)","Position (median, IQR)",2.3828828828828827,V,results/eng02_second_peak.json: tail_artifact_below_2.7V; IQR from results/features_expanded.parquet
+"Largest maximum below 2.7 V (LFP, 4C; not searched)",At 2.35–2.55 V (a bump separate from the knee upturn below 2.35 V),0.5945566583377301,share,results/features_expanded.parquet
+"Largest maximum below 2.7 V (LFP, 4C; not searched)",Prominence ≥ 0.3 Ah/V,0.025244129445843578,share,results/eng02_second_peak.json: tail_artifact_below_2.7V; cells from results/features_expanded.parquet

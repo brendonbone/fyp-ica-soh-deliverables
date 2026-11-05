@@ -1,0 +1,27 @@
+# Raw data: never committed (see README.md, "Data"). `data/` may be a
+# junction/symlink to wherever the Severson pickles live.
+data/
+data
+
+# Environments and caches
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Regenerable feature tables that are large or need the raw pickles.
+# features_expanded.parquet and features_3feat.parquet ARE committed: they are
+# the extracted dataset, and every stage after extraction runs from them.
+results/features_history.parquet
+results/features_soc_windows.parquet
+results/features_expanded_smoke*
+
+# Resumable-run progress files (the merged results/*.json hold the same numbers)
+results/*_progress*.json
+results/*.json.tmp
+results/*.log
+cluster/logs/
+
+# Stage 17 keeps one progress file per task; they hold the per-fit results the
+# partition report is rebuilt from, so they are committed.
+!results/eng25_progress_*.json

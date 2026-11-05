@@ -1,0 +1,368 @@
+{
+  "pool": [
+    "height",
+    "position",
+    "area",
+    "area35",
+    "area25",
+    "fwhm",
+    "slope_left",
+    "slope_right",
+    "prominence"
+  ],
+  "protocol": {
+    "outer": "study 5-fold StratifiedGroupKFold",
+    "inner": "GroupKFold(4) by cell",
+    "fixed_config_rule": "best mean inner RMSE across outer folds"
+  },
+  "rf": {
+    "grid": [
+      {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "max_features": 1.0
+      },
+      {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "max_features": 0.5
+      },
+      {
+        "max_depth": null,
+        "min_samples_leaf": 10,
+        "max_features": 1.0
+      },
+      {
+        "max_depth": null,
+        "min_samples_leaf": 10,
+        "max_features": 0.5
+      },
+      {
+        "max_depth": null,
+        "min_samples_leaf": 30,
+        "max_features": 1.0
+      },
+      {
+        "max_depth": null,
+        "min_samples_leaf": 30,
+        "max_features": 0.5
+      },
+      {
+        "max_depth": 15,
+        "min_samples_leaf": 1,
+        "max_features": 1.0
+      },
+      {
+        "max_depth": 15,
+        "min_samples_leaf": 1,
+        "max_features": 0.5
+      },
+      {
+        "max_depth": 15,
+        "min_samples_leaf": 10,
+        "max_features": 1.0
+      },
+      {
+        "max_depth": 15,
+        "min_samples_leaf": 10,
+        "max_features": 0.5
+      },
+      {
+        "max_depth": 15,
+        "min_samples_leaf": 30,
+        "max_features": 1.0
+      },
+      {
+        "max_depth": 15,
+        "min_samples_leaf": 30,
+        "max_features": 0.5
+      }
+    ],
+    "inner_rmse_matrix": [
+      [
+        0.020681,
+        0.020288,
+        0.02112,
+        0.020906,
+        0.021489,
+        0.021271,
+        0.020639,
+        0.020269,
+        0.021124,
+        0.020915,
+        0.02149,
+        0.021271
+      ],
+      [
+        0.020518,
+        0.020429,
+        0.021108,
+        0.021031,
+        0.021568,
+        0.021541,
+        0.020483,
+        0.020419,
+        0.021117,
+        0.021052,
+        0.02157,
+        0.021545
+      ],
+      [
+        0.020545,
+        0.020342,
+        0.020953,
+        0.020777,
+        0.021419,
+        0.021444,
+        0.020496,
+        0.020319,
+        0.020955,
+        0.020795,
+        0.02142,
+        0.021446
+      ],
+      [
+        0.019953,
+        0.019914,
+        0.020074,
+        0.020109,
+        0.020612,
+        0.020599,
+        0.019988,
+        0.019999,
+        0.020096,
+        0.020148,
+        0.020614,
+        0.020608
+      ],
+      [
+        0.021122,
+        0.020954,
+        0.021821,
+        0.021674,
+        0.022276,
+        0.022132,
+        0.021097,
+        0.020946,
+        0.021832,
+        0.021677,
+        0.022278,
+        0.022131
+      ]
+    ],
+    "nested_outer_estimates": [
+      {
+        "outer_fold": 0,
+        "chosen": {
+          "max_depth": 15,
+          "min_samples_leaf": 1,
+          "max_features": 0.5
+        },
+        "rmse": 0.022158194213597274,
+        "mae": 0.01570996103934404,
+        "r2": 0.8114507944257504
+      },
+      {
+        "outer_fold": 1,
+        "chosen": {
+          "max_depth": 15,
+          "min_samples_leaf": 1,
+          "max_features": 0.5
+        },
+        "rmse": 0.018955188322961305,
+        "mae": 0.012265617208072361,
+        "r2": 0.866294509012317
+      },
+      {
+        "outer_fold": 2,
+        "chosen": {
+          "max_depth": 15,
+          "min_samples_leaf": 1,
+          "max_features": 0.5
+        },
+        "rmse": 0.01882579535520831,
+        "mae": 0.012547131541830622,
+        "r2": 0.868136437244573
+      },
+      {
+        "outer_fold": 3,
+        "chosen": {
+          "max_depth": null,
+          "min_samples_leaf": 1,
+          "max_features": 0.5
+        },
+        "rmse": 0.02142226852511456,
+        "mae": 0.013977128296985036,
+        "r2": 0.8262938358140494
+      },
+      {
+        "outer_fold": 4,
+        "chosen": {
+          "max_depth": 15,
+          "min_samples_leaf": 1,
+          "max_features": 0.5
+        },
+        "rmse": 0.019066377418278314,
+        "mae": 0.012962237305367419,
+        "r2": 0.86611555584333
+      }
+    ],
+    "nested_rmse_mean": 0.020085564767031952,
+    "nested_r2_mean": 0.8476582264680038,
+    "fixed_config": {
+      "max_depth": null,
+      "min_samples_leaf": 1,
+      "max_features": 0.5
+    }
+  },
+  "gpr": {
+    "grid": [
+      {
+        "kernel_name": "rbf"
+      },
+      {
+        "kernel_name": "matern15"
+      },
+      {
+        "kernel_name": "matern25"
+      },
+      {
+        "kernel_name": "rq"
+      }
+    ],
+    "inner_rmse_matrix": [
+      [
+        0.01981,
+        0.019768,
+        0.019716,
+        0.019842
+      ],
+      [
+        0.020275,
+        0.020113,
+        0.020082,
+        0.020201
+      ],
+      [
+        0.020985,
+        0.020739,
+        0.02074,
+        0.020812
+      ],
+      [
+        0.020564,
+        0.020248,
+        0.02038,
+        0.020189
+      ],
+      [
+        0.021174,
+        0.02082,
+        0.020897,
+        0.020893
+      ]
+    ],
+    "nested_outer_estimates": [
+      {
+        "outer_fold": 0,
+        "chosen": {
+          "kernel_name": "matern25"
+        },
+        "rmse": 0.022811826043895936,
+        "mae": 0.016228051076894984,
+        "r2": 0.8001629177984952
+      },
+      {
+        "outer_fold": 1,
+        "chosen": {
+          "kernel_name": "matern25"
+        },
+        "rmse": 0.020458732269409717,
+        "mae": 0.013306905968422747,
+        "r2": 0.8442419598111315
+      },
+      {
+        "outer_fold": 2,
+        "chosen": {
+          "kernel_name": "matern15"
+        },
+        "rmse": 0.018607284382826047,
+        "mae": 0.012656034204287573,
+        "r2": 0.8711797525332658
+      },
+      {
+        "outer_fold": 3,
+        "chosen": {
+          "kernel_name": "rq"
+        },
+        "rmse": 0.021380517908972756,
+        "mae": 0.014133423747991218,
+        "r2": 0.8269702601809317
+      },
+      {
+        "outer_fold": 4,
+        "chosen": {
+          "kernel_name": "matern15"
+        },
+        "rmse": 0.01870999562608549,
+        "mae": 0.012800166093412052,
+        "r2": 0.871073818333929
+      }
+    ],
+    "nested_rmse_mean": 0.020393671246237987,
+    "nested_r2_mean": 0.8427257417315506,
+    "fixed_config": {
+      "kernel_name": "matern15"
+    }
+  },
+  "before_after_heldout": {
+    "rf_untuned": {
+      "pooled": {
+        "rmse": 0.016050838226150877,
+        "mae": 0.011656576548631583,
+        "r2": 0.8446048988751562
+      },
+      "cell_avg": {
+        "rmse": 0.014664061803671599,
+        "mae": 0.012236581285088276,
+        "r2": 0.8038426524781157
+      }
+    },
+    "rf_tuned": {
+      "pooled": {
+        "rmse": 0.01564620934273921,
+        "mae": 0.01138161034237442,
+        "r2": 0.8523409188139824
+      },
+      "cell_avg": {
+        "rmse": 0.014246700009517499,
+        "mae": 0.011900279290443344,
+        "r2": 0.8159214114154754
+      }
+    },
+    "gpr_untuned": {
+      "pooled": {
+        "rmse": 0.016814307905476264,
+        "mae": 0.012779491085140126,
+        "r2": 0.8294703580237389
+      },
+      "cell_avg": {
+        "rmse": 0.015890165541509314,
+        "mae": 0.013686300659239686,
+        "r2": 0.7827112648602891
+      }
+    },
+    "gpr_tuned": {
+      "pooled": {
+        "rmse": 0.016199444641602605,
+        "mae": 0.012304009402716783,
+        "r2": 0.8417141326287375
+      },
+      "cell_avg": {
+        "rmse": 0.015272629503201624,
+        "mae": 0.013118283473548223,
+        "r2": 0.8011286930732228
+      }
+    }
+  }
+}

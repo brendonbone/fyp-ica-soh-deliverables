@@ -1,0 +1,71 @@
+{
+  "grid": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    67
+  ],
+  "n_repeats": 5,
+  "aggregate": [
+    {
+      "n_cells": 10,
+      "r2_mean": 0.785523,
+      "r2_std": 0.056236,
+      "rmse_mean": 0.023696,
+      "rmse_std": 0.003021
+    },
+    {
+      "n_cells": 20,
+      "r2_mean": 0.814634,
+      "r2_std": 0.040249,
+      "rmse_mean": 0.022092,
+      "rmse_std": 0.002293
+    },
+    {
+      "n_cells": 30,
+      "r2_mean": 0.822438,
+      "r2_std": 0.039663,
+      "rmse_mean": 0.021624,
+      "rmse_std": 0.002246
+    },
+    {
+      "n_cells": 40,
+      "r2_mean": 0.839404,
+      "r2_std": 0.03035,
+      "rmse_mean": 0.020597,
+      "rmse_std": 0.001804
+    },
+    {
+      "n_cells": 50,
+      "r2_mean": 0.840277,
+      "r2_std": 0.032038,
+      "rmse_mean": 0.020531,
+      "rmse_std": 0.001876
+    },
+    {
+      "n_cells": 60,
+      "r2_mean": 0.844439,
+      "r2_std": 0.028818,
+      "rmse_mean": 0.020276,
+      "rmse_std": 0.001716
+    },
+    {
+      "n_cells": 66,
+      "r2_mean": 0.840766,
+      "r2_std": 0.02783,
+      "rmse_mean": 0.020568,
+      "rmse_std": 0.001663
+    },
+    {
+      "n_cells": 67,
+      "r2_mean": 0.850821,
+      "r2_std": 0.02742,
+      "rmse_mean": 0.019831,
+      "rmse_std": 0.001621
+    }
+  ],
+  "plateau_n_cells": 40
+}

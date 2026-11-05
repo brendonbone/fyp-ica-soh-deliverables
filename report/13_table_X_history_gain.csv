@@ -1,0 +1,5 @@
+model,features,n_columns,dev_cv_rmse,dev_cv_fold_sd,change_with_history_rel,change_with_tuning_rel,eng14_pearson_order_dev_cv_rmse,source
+RF,nine level features,9,0.02038113639082132,0.0015805069352669622,,,0.020364501066075624,"results/eng24_level_subsets_history_rows.json table, all nine"
+RF,nine features + history,63,0.018170781122729632,0.0028799613498219083,-0.10845103166510017,,0.018166465512763907,"results/eng23_grouped_history_subsets.json table, all nine groups"
+RF tuned,nine level features,9,0.020290988876053843,0.0014369669694912412,,-0.004423085790646859,0.02028210242001954,"results/eng28_feature_sets_models.json cells, all9 x RF tuned"
+RF tuned,nine features + history,63,0.017574229392623958,0.0028157182612838956,-0.1338899498701138,-0.032830274388119425,0.017560733672633427,"results/eng23_grouped_history_subsets_analysis.json tuned, all nine groups"

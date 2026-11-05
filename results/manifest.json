@@ -1,0 +1,1022 @@
+{
+  "eng00_baseline": {
+    "batch3_pooled": {
+      "mae": 0.012066064501910171,
+      "r2": 0.8295468766058511,
+      "rmse": 0.016810535096988582
+    },
+    "cv_pooled_r2_mean": 0.8005810845708761,
+    "features": [
+      "height",
+      "position",
+      "area"
+    ],
+    "script": "stages/s01_interim_model.py",
+    "seed": 0,
+    "timestamp_utc": "2026-10-20T06:10:51+00:00",
+    "verdict": "PASS"
+  },
+  "eng01_harness_validation": {
+    "rf_importance_height": 0.7219102781453444,
+    "script": "scripts/eng01_validate_harness.py",
+    "seed": 0,
+    "timestamp_utc": "2026-07-07T07:15:55+00:00",
+    "verdict": "PASS"
+  },
+  "eng02_second_peak": {
+    "pct_resolvable_at_0.3": 0.006798793537662131,
+    "recompute_agreement_median_r": 0.9968831183416662,
+    "script": "scripts/eng02_dqdv_check.py",
+    "timestamp_utc": "2026-07-07T07:24:30+00:00"
+  },
+  "eng03_eng11_nasa": {
+    "eng03_pct_2nd_peak_at_0.1": 0.6792452830188679,
+    "eng03_verdict": "YES",
+    "eng11_b0018_rmse": 0.03661374008364244,
+    "script": "scripts/eng03_11_nasa.py",
+    "timestamp_utc": "2026-07-07T10:48:24+00:00"
+  },
+  "eng04_feature_pool": {
+    "n_features": 9,
+    "script": "stages/s04_feature_pool.py",
+    "timestamp_utc": "2026-10-20T05:56:41+00:00",
+    "verdict": "PASS"
+  },
+  "eng05_extraction": {
+    "n_rows": 100501,
+    "out": "results/features_expanded.parquet",
+    "overall_fail_rate": 0.0004179062894896568,
+    "script": "stages/s02_extract_features.py",
+    "timestamp_utc": "2026-10-20T06:12:27+00:00",
+    "verdict": "PASS"
+  },
+  "eng06_07_model_baselines": {
+    "b3_rmse": {
+      "enet": 0.018607422223157095,
+      "gpr": 0.016814307905476264,
+      "linear": 0.018624891533817963,
+      "rf": 0.016050838226150877,
+      "ridge": 0.018625320441354464
+    },
+    "pool_size": 9,
+    "script": "stages/s05_simple_models.py",
+    "seed": 0,
+    "timestamp_utc": "2026-10-20T06:06:02+00:00"
+  },
+  "eng08_comparison": {
+    "baseline_b3_rmse": 0.01681053509698858,
+    "best": {
+      "b3_r2": 0.8452790073595288,
+      "b3_rmse": 0.016015985885092208,
+      "features": "area25|area35|area|position|height|prominence|slope_right|slope_left|fwhm",
+      "k": 9,
+      "regressor": "rf",
+      "selection_method": "pearson"
+    },
+    "script": "scripts/eng08_comparison.py",
+    "seed": 0,
+    "timestamp_utc": "2026-09-20T10:24:13+00:00",
+    "tuned": false
+  },
+  "eng08_comparison_tuned": {
+    "baseline_b3_rmse": 0.01681053509698858,
+    "best": {
+      "b3_r2": 0.85383345381326,
+      "b3_rmse": 0.015566932718872748,
+      "features": "area25|area35|area|position|height|prominence|slope_right|slope_left|fwhm",
+      "k": 9,
+      "regressor": "rf",
+      "selection_method": "pearson"
+    },
+    "script": "scripts/eng08_comparison.py",
+    "seed": 0,
+    "timestamp_utc": "2026-09-20T10:34:00+00:00",
+    "tuned": true
+  },
+  "eng09_tuning": {
+    "nested_rmse": {
+      "gpr": 0.020393671246237987,
+      "rf": 0.020085564767031952
+    },
+    "script": "scripts/eng09_tune.py",
+    "seed": 0,
+    "timestamp_utc": "2026-07-07T09:09:14+00:00",
+    "tuned_params": {
+      "gpr": {
+        "kernel_name": "matern15"
+      },
+      "rf": {
+        "max_depth": null,
+        "max_features": 0.5,
+        "min_samples_leaf": 1
+      }
+    }
+  },
+  "eng10_learning_curve": {
+    "max_r2_mean": 0.850820885934347,
+    "plateau_n_cells": 40,
+    "script": "stages/s20_learning_curve.py",
+    "timestamp_utc": "2026-10-22T23:26:51+00:00"
+  },
+  "eng14_diagnostic_pools": {
+    "b3_rmse": {
+      "drift_only": 0.016434775556022897,
+      "level_plus_rm20": 0.015460806175530587,
+      "rm20_only": 0.01589564818966647
+    },
+    "script": "scripts/eng14_diagnostic_pools.py",
+    "seed": 0,
+    "timestamp_utc": "2026-09-18T02:28:35+00:00"
+  },
+  "eng14_temporal": {
+    "baseline_b3_rmse_same_rows": 0.01691506036997005,
+    "best_combined": {
+      "b3_r2": 0.880554180627852,
+      "b3_rmse": 0.014103806749347237,
+      "cell": "mutual_info|rf",
+      "cv_rmse": 0.018153624948119083,
+      "k": 63,
+      "selected_features": [
+        "area25_rm20",
+        "height_rm20",
+        "prominence_rm20",
+        "area35_rm20",
+        "area_rm20",
+        "position_rm20",
+        "slope_right_rm20",
+        "slope_left_rm20",
+        "prominence",
+        "height",
+        "area25",
+        "area35",
+        "area",
+        "area25_drift",
+        "prominence_drift",
+        "area_drift",
+        "area35_drift",
+        "height_drift",
+        "position_drift",
+        "position",
+        "fwhm_rm20",
+        "slope_left",
+        "slope_right",
+        "slope_right_drift",
+        "height_slope20",
+        "prominence_slope20",
+        "slope_left_drift",
+        "area25_slope20",
+        "fwhm",
+        "area_slope20",
+        "position_slope20",
+        "area35_slope20",
+        "fwhm_drift",
+        "prominence_d20",
+        "height_d20",
+        "height_slope10",
+        "area25_d20",
+        "prominence_slope10",
+        "height_d10",
+        "area35_d20",
+        "fwhm_slope20",
+        "slope_right_slope20",
+        "area25_slope10",
+        "prominence_d10",
+        "position_d20",
+        "slope_left_slope20",
+        "area_d20",
+        "area35_slope10",
+        "area25_d10",
+        "slope_right_slope10",
+        "area_slope10",
+        "slope_right_d20",
+        "area35_d10",
+        "slope_right_d10",
+        "area_d10",
+        "slope_left_d10",
+        "slope_left_slope10",
+        "position_slope10",
+        "slope_left_d20",
+        "position_d10",
+        "fwhm_d20",
+        "fwhm_d10",
+        "fwhm_slope10"
+      ]
+    },
+    "best_level": {
+      "b3_r2": 0.8429248407809926,
+      "b3_rmse": 0.016173522831551934,
+      "cell": "mutual_info|rf",
+      "cv_rmse": 0.020373743862916675,
+      "k": 9,
+      "selected_features": [
+        "prominence",
+        "height",
+        "area25",
+        "area35",
+        "area",
+        "position",
+        "slope_left",
+        "slope_right",
+        "fwhm"
+      ]
+    },
+    "combined_vs_level_rel_rmse": -0.12796940430114676,
+    "folds": "ENG-08 cell->fold map (assign_folds on full clean dev set)",
+    "k_grid_mode": "coarse",
+    "min_history": 20,
+    "rows_with_history": 97852,
+    "script": "scripts/eng14_temporal_comparison.py",
+    "seed": 0,
+    "timestamp_utc": "2026-09-18T02:04:09+00:00",
+    "tuned": false,
+    "windows": [
+      10,
+      20
+    ]
+  },
+  "eng14_temporal_tuned": {
+    "baseline_b3_rmse_same_rows": 0.016915060369970057,
+    "best_combined": {
+      "b3_r2": 0.9066126707619875,
+      "b3_rmse": 0.01247081536226912,
+      "cell": "mutual_info|gpr",
+      "cv_rmse": 0.018417546148229054,
+      "k": 48,
+      "selected_features": [
+        "area25_rm20",
+        "height_rm20",
+        "prominence_rm20",
+        "area35_rm20",
+        "area_rm20",
+        "position_rm20",
+        "slope_right_rm20",
+        "slope_left_rm20",
+        "prominence",
+        "height",
+        "area25",
+        "area35",
+        "area",
+        "area25_drift",
+        "prominence_drift",
+        "area_drift",
+        "area35_drift",
+        "height_drift",
+        "position_drift",
+        "position",
+        "fwhm_rm20",
+        "slope_left",
+        "slope_right",
+        "slope_right_drift",
+        "height_slope20",
+        "prominence_slope20",
+        "slope_left_drift",
+        "area25_slope20",
+        "fwhm",
+        "area_slope20",
+        "position_slope20",
+        "area35_slope20",
+        "fwhm_drift",
+        "prominence_d20",
+        "height_d20",
+        "height_slope10",
+        "area25_d20",
+        "prominence_slope10",
+        "height_d10",
+        "area35_d20",
+        "fwhm_slope20",
+        "slope_right_slope20",
+        "area25_slope10",
+        "prominence_d10",
+        "position_d20",
+        "slope_left_slope20",
+        "area_d20",
+        "area35_slope10"
+      ]
+    },
+    "best_level": {
+      "b3_r2": 0.8498213487001058,
+      "b3_rmse": 0.015814482009621156,
+      "cell": "mutual_info|rf",
+      "cv_rmse": 0.02025558034373413,
+      "k": 9,
+      "selected_features": [
+        "prominence",
+        "height",
+        "area25",
+        "area35",
+        "area",
+        "position",
+        "slope_left",
+        "slope_right",
+        "fwhm"
+      ]
+    },
+    "combined_vs_level_rel_rmse": -0.21143067761042236,
+    "folds": "ENG-08 cell->fold map (assign_folds on full clean dev set)",
+    "k_grid_mode": "coarse",
+    "min_history": 20,
+    "rows_with_history": 97852,
+    "script": "scripts/eng14_temporal_comparison.py",
+    "seed": 0,
+    "timestamp_utc": "2026-09-20T01:23:28+00:00",
+    "tuned": true,
+    "windows": [
+      10,
+      20
+    ]
+  },
+  "eng14_validation": {
+    "checks": {
+      "1_constant_cell_zero_change": true,
+      "2_linear_cell_recovers_slope": true,
+      "3_gap_lag_by_cycle_number_backward_fill": true,
+      "4_nan_exactly_first_min_history_cycles": true,
+      "5_no_look_ahead_perturbation": true,
+      "6_slope_matches_polyfit": true,
+      "7_correlation_leak_check": true,
+      "8_replica_matches_harness_compare": true,
+      "9_permutation_backend_independent": true
+    },
+    "script": "scripts/eng14_validate_temporal.py",
+    "seed": 0,
+    "timestamp_utc": "2026-09-17T21:26:47+00:00",
+    "verdict": "PASS"
+  },
+  "eng15_split_robustness": {
+    "n_cells": 120,
+    "partitions": [
+      "lobo_b1",
+      "lobo_b2",
+      "lobo_b3",
+      "cv3_f0",
+      "cv3_f1",
+      "cv3_f2"
+    ],
+    "pearson_rf_test_rmse_by_pool_partition": {
+      "combined|cv3_f0": 0.012822960259450471,
+      "combined|cv3_f1": 0.013425308960462965,
+      "combined|cv3_f2": 0.018204706541034996,
+      "combined|lobo_b1": 0.02627959201908829,
+      "combined|lobo_b2": 0.03550270054910049,
+      "combined|lobo_b3": 0.01416669665758091,
+      "level|cv3_f0": 0.01532095463521763,
+      "level|cv3_f1": 0.01680948129701036,
+      "level|cv3_f2": 0.021256950267738692,
+      "level|lobo_b1": 0.028625655120303795,
+      "level|lobo_b2": 0.03851104023055945,
+      "level|lobo_b3": 0.016208014343787925,
+      "temporal|cv3_f0": 0.012894778889593027,
+      "temporal|cv3_f1": 0.013554745128454886,
+      "temporal|cv3_f2": 0.01827830900499007,
+      "temporal|lobo_b1": 0.026213932794767372,
+      "temporal|lobo_b2": 0.03565444153900777,
+      "temporal|lobo_b3": 0.014200833955596149
+    },
+    "script": "scripts/eng15_split_robustness.py",
+    "seed": 0,
+    "self_check": {
+      "pass": true,
+      "recomputed_test_rmse": 0.016015985885092208,
+      "stored_test_rmse": 0.016015985885092208
+    },
+    "timestamp_utc": "2026-09-20T18:34:53+00:00"
+  },
+  "eng16_spearman_check": {
+    "kendall_tau_combined": 0.8566308243727597,
+    "kendall_tau_level": 0.8333333333333334,
+    "monotonic_not_linear_level": [
+      "slope_left",
+      "prominence"
+    ],
+    "script": "stages/s04_feature_pool.py",
+    "timestamp_utc": "2026-10-20T05:56:43+00:00"
+  },
+  "eng17_feature_soc_requirements": {
+    "n_cycles": 100331,
+    "script": "stages/s10_soc_windows.py",
+    "soc_span_median": {
+      "area": 0.42304333788754933,
+      "area25": 0.26961825376117243,
+      "area35": 0.3416480331372239,
+      "fwhm": 0.9644702157813532,
+      "height": 0.13587820812566465,
+      "position": 0.13587820812566465,
+      "prominence": 0.9644702157813532,
+      "slope_left": 0.19988152142813886,
+      "slope_right": 0.20385708501153976
+    },
+    "timestamp_utc": "2026-10-20T06:12:48+00:00"
+  },
+  "eng18_nasa_grid": {
+    "baseline_heldout_rmse": 0.0364208254218888,
+    "best": {
+      "features": "fwhm|height|area25|position|area|area35|prominence|slope_left",
+      "heldout_r2": 0.9088156213593914,
+      "heldout_rmse": 0.025117256515124593,
+      "k": 8,
+      "regressor": "gpr",
+      "selection_method": "rf_importance"
+    },
+    "script": "scripts/eng18_nasa_grid.py",
+    "seed": 0,
+    "timestamp_utc": "2026-10-10T07:31:05+00:00"
+  },
+  "eng19_exhaustive_subsets": {
+    "b3_rmse": {
+      "all9": 0.01605083822615088,
+      "cv_best": 0.01639718056818779,
+      "one_se": 0.017561819921999785
+    },
+    "script": "scripts/eng19_exhaustive_subsets.py",
+    "seed": 0,
+    "timestamp_utc": "2026-10-11T02:43:17+00:00"
+  },
+  "eng19b_subset_analysis": {
+    "be_drop_order": [
+      "slope_left",
+      "area35",
+      "height",
+      "area25",
+      "area",
+      "slope_right",
+      "position",
+      "fwhm"
+    ],
+    "best_per_k_cv": {
+      "1": 0.0292156504860318,
+      "2": 0.0235859559505207,
+      "3": 0.022188478795635,
+      "4": 0.0207574997714842,
+      "5": 0.0203912277607994,
+      "6": 0.0202226296761002,
+      "7": 0.0201531293924228,
+      "8": 0.0201321136731934,
+      "9": 0.0201506219094595
+    },
+    "checks_pass": {
+      "eng17_sets": true
+    },
+    "n_batch3_subsets": 18,
+    "per_cycle_windows": true,
+    "script": "scripts/eng19b_subset_analysis.py",
+    "seed": 0,
+    "selection_rules": {
+      "one_standard_error": [
+        "position",
+        "fwhm",
+        "slope_right",
+        "prominence"
+      ],
+      "within_one_fold_sd": [
+        "position",
+        "fwhm",
+        "slope_right",
+        "prominence"
+      ]
+    },
+    "shapley": {
+      "area": 0.004354149738362006,
+      "area25": 0.004403160154514371,
+      "area35": 0.004308273508180336,
+      "fwhm": 0.000910378902155299,
+      "height": 0.004389165256796178,
+      "position": 0.0040107347438529724,
+      "prominence": 0.004493228020816144,
+      "slope_left": 0.002197026032340773,
+      "slope_right": 0.0024371895717123088
+    },
+    "timestamp_utc": "2026-10-11T03:30:57+00:00"
+  },
+  "eng20_reference_seeds": {
+    "b3_rmse_mean_sd": {
+      "tuned|both_orders": [
+        0.015636608979536986,
+        3.9656463459633126e-05
+      ],
+      "tuned|pearson": [
+        0.015611678691278715,
+        2.9603350361395957e-05
+      ],
+      "tuned|pool": [
+        0.015661539267795257,
+        3.2595937309892085e-05
+      ],
+      "untuned|both_orders": [
+        0.016010990457086503,
+        4.097033406048673e-05
+      ],
+      "untuned|pearson": [
+        0.016008536495589407,
+        4.156081107631915e-05
+      ],
+      "untuned|pool": [
+        0.016013444418583607,
+        4.2461288894253354e-05
+      ]
+    },
+    "checks_seed0_pass": true,
+    "script": "stages/s12_reference_seeds.py",
+    "seed_note": "random_state 0..9 for the forest; data/folds use seed 0",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "timestamp_utc": "2026-10-20T06:36:26+00:00"
+  },
+  "eng21_grouped_permutation": {
+    "checks": {
+      "history_tuned_vs_stored": true,
+      "level_tuned_vs_stored": true,
+      "level_untuned_vs_stored": true,
+      "sklearn_one_column": {
+        "level_tuned": {
+          "max_abs_diff_one_column_groups": 1.734723475976807e-18,
+          "pass": true
+        },
+        "level_untuned": {
+          "max_abs_diff_one_column_groups": 2.6020852139652106e-18,
+          "pass": true
+        }
+      }
+    },
+    "history_by_component_grouped": {
+      "d10": 0.0002096657646237194,
+      "d20": 0.0003596897780581201,
+      "drift": 0.003958070766209306,
+      "level": 0.0012081334286628271,
+      "rm20": 0.047112599762316444,
+      "slope10": 0.00018263922627394805,
+      "slope20": 0.0005526592183391864
+    },
+    "level_tuned_area_block": 0.021381876837749378,
+    "script": "stages/s13_grouped_importance.py",
+    "seed": 0,
+    "timestamp_utc": "2026-10-20T06:49:04+00:00"
+  },
+  "eng22_history_components": {
+    "best": {
+      "blocks": [
+        "level",
+        "d10",
+        "d20",
+        "slope10",
+        "slope20",
+        "drift",
+        "rm20"
+      ],
+      "cv_rmse": 0.018170781122729632
+    },
+    "hosts": [
+      "k001",
+      "k024",
+      "k063",
+      "k129",
+      "k151",
+      "k224"
+    ],
+    "n_subsets": 127,
+    "script": "scripts/eng22_history_components.py",
+    "seed": 0,
+    "timestamp_utc": "2026-10-11T06:04:42+00:00"
+  },
+  "eng22_history_components_analysis": {
+    "best_per_k": {
+      "1": [
+        [
+          "rm20"
+        ],
+        0.019960750984776482
+      ],
+      "2": [
+        [
+          "slope20",
+          "rm20"
+        ],
+        0.019087197839529862
+      ],
+      "3": [
+        [
+          "slope20",
+          "drift",
+          "rm20"
+        ],
+        0.018665408623782194
+      ],
+      "4": [
+        [
+          "d20",
+          "slope20",
+          "drift",
+          "rm20"
+        ],
+        0.01840989073202067
+      ],
+      "5": [
+        [
+          "level",
+          "d20",
+          "slope20",
+          "drift",
+          "rm20"
+        ],
+        0.018279821404539542
+      ],
+      "6": [
+        [
+          "level",
+          "d20",
+          "slope10",
+          "slope20",
+          "drift",
+          "rm20"
+        ],
+        0.01820230620608221
+      ],
+      "7": [
+        [
+          "level",
+          "d10",
+          "d20",
+          "slope10",
+          "slope20",
+          "drift",
+          "rm20"
+        ],
+        0.018170781122729632
+      ]
+    },
+    "checks": {
+      "drift_only_vs_eng14_diagnostic": {
+        "abs_diff": 1.7290367847710292e-05,
+        "eng14_diag_pearson_order": 0.024143711622447835,
+        "eng22": 0.024126421254600124,
+        "pass_within_5e-5": true
+      },
+      "level_plus_rm20_vs_eng14_diagnostic": {
+        "abs_diff": 1.3135381745320307e-06,
+        "eng14_diag_pearson_order": 0.019387065653512704,
+        "eng22": 0.019388379191687236,
+        "pass_within_5e-5": true
+      },
+      "rm20_only_vs_eng14_diagnostic": {
+        "abs_diff": 1.1650438687317577e-05,
+        "eng14_diag_pearson_order": 0.019949100546089164,
+        "eng22": 0.019960750984776482,
+        "pass_within_5e-5": true
+      }
+    },
+    "designs": {
+      "d10": {
+        "cv_all_minus": 0.01820230620608221,
+        "cv_alone": 0.03954973426880747
+      },
+      "d20": {
+        "cv_all_minus": 0.01825449913361423,
+        "cv_alone": 0.03627711309158162
+      },
+      "drift": {
+        "cv_all_minus": 0.018479003318517793,
+        "cv_alone": 0.024126421254600124
+      },
+      "level": {
+        "cv_all_minus": 0.018226355979400165,
+        "cv_alone": 0.02038113639082132
+      },
+      "rm20": {
+        "cv_all_minus": 0.01921119041834321,
+        "cv_alone": 0.019960750984776482
+      },
+      "slope10": {
+        "cv_all_minus": 0.018228665964993326,
+        "cv_alone": 0.039750592497045725
+      },
+      "slope20": {
+        "cv_all_minus": 0.01833163062635925,
+        "cv_alone": 0.03597334591548705
+      }
+    },
+    "script": "scripts/eng22_history_components.py --analyse",
+    "seed": 0,
+    "timestamp_utc": "2026-10-11T06:20:00+00:00"
+  },
+  "eng22_history_components_seed_check": {
+    "script": "scripts/eng22_history_components.py --seed-check",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "summary": {
+      "all 63": {
+        "b3_mean": 0.014099698585065282,
+        "b3_r2_mean": 0.8806233491288564,
+        "b3_sd": 3.184035576025844e-05,
+        "cv_mean": 0.018169593774073563,
+        "cv_sd": 1.521335257176759e-05
+      },
+      "all 63 minus rm20": {
+        "b3_mean": 0.01199002533714224,
+        "b3_r2_mean": 0.9136740690469557,
+        "b3_sd": 3.73674148738816e-05,
+        "cv_mean": 0.019192643793128954,
+        "cv_sd": 2.7347029948178236e-05
+      }
+    },
+    "timestamp_utc": "2026-10-11T07:37:12+00:00"
+  },
+  "eng23_grouped_history_subsets": {
+    "best": {
+      "blocks": [
+        "height",
+        "position",
+        "area",
+        "fwhm",
+        "slope_left",
+        "slope_right",
+        "prominence"
+      ],
+      "cv_rmse": 0.017747291927684084
+    },
+    "hosts": [
+      "Main_Laptop",
+      "k001",
+      "k020",
+      "k021",
+      "k028",
+      "k063",
+      "k071",
+      "k073",
+      "k122",
+      "k123",
+      "k124",
+      "k131",
+      "k134",
+      "k137",
+      "k143",
+      "k144",
+      "k149",
+      "k159",
+      "k160",
+      "k193",
+      "k215",
+      "k222",
+      "k224"
+    ],
+    "n_subsets": 511,
+    "script": "scripts/eng23_grouped_history_subsets.py",
+    "seed": 0,
+    "timestamp_utc": "2026-10-11T06:55:47+00:00"
+  },
+  "eng23_grouped_history_subsets_analysis": {
+    "be_drop_order": [
+      "area25",
+      "area35",
+      "slope_left",
+      "prominence",
+      "position",
+      "area",
+      "slope_right",
+      "fwhm"
+    ],
+    "best_per_k_cv": {
+      "1": 0.020391299205003478,
+      "2": 0.01845570107869882,
+      "3": 0.018057391915798394,
+      "4": 0.017995984703376218,
+      "5": 0.017809638483093602,
+      "6": 0.017751045741134622,
+      "7": 0.017747291927684084,
+      "8": 0.017889196963727833,
+      "9": 0.018170781122729632
+    },
+    "checks": {
+      "all63_vs_eng14_combined_k63": {
+        "abs_diff": 4.315609965725026e-06,
+        "eng14_combined_pearson_k63": 0.018166465512763907,
+        "eng23_all63_combined_order": 0.018170781122729632,
+        "pass_within_5e-5": true
+      },
+      "all63_vs_eng22_all_components": {
+        "abs_diff": 0.0,
+        "eng22": 0.018170781122729632,
+        "eng23": 0.018170781122729632,
+        "pass_exact": true
+      }
+    },
+    "n_batch3_subsets": 15,
+    "script": "scripts/eng23_grouped_history_subsets.py --analyse",
+    "seed": 0,
+    "timestamp_utc": "2026-10-11T07:09:56+00:00"
+  },
+  "eng24_level_subsets_history_rows": {
+    "best": {
+      "blocks": [
+        "height",
+        "position",
+        "area",
+        "area35",
+        "area25",
+        "fwhm",
+        "slope_right",
+        "prominence"
+      ],
+      "cv_rmse": 0.020363899265193636
+    },
+    "hosts": [
+      "Main_Laptop",
+      "k001",
+      "k020",
+      "k128",
+      "k188",
+      "k192"
+    ],
+    "n_subsets": 511,
+    "script": "scripts/eng24_level_subsets_history_rows.py",
+    "seed": 0,
+    "timestamp_utc": "2026-10-11T06:37:11+00:00"
+  },
+  "eng24_level_subsets_history_rows_analysis": {
+    "be_drop_order": [
+      "slope_left",
+      "area35",
+      "height",
+      "area25",
+      "area",
+      "slope_right",
+      "position",
+      "fwhm"
+    ],
+    "best_per_k_cv": {
+      "1": 0.029575825176091548,
+      "2": 0.023882884167620397,
+      "3": 0.022515824093670894,
+      "4": 0.02102831648945969,
+      "5": 0.02064529918200101,
+      "6": 0.02044046410720196,
+      "7": 0.020386035386287377,
+      "8": 0.020363899265193636,
+      "9": 0.02038113639082132
+    },
+    "checks": {
+      "all9_vs_eng14_level_k9": {
+        "abs_diff": 1.6635324745696567e-05,
+        "eng14_level_pearson_k9": 0.020364501066075624,
+        "eng24_all9_pool_order": 0.02038113639082132,
+        "pass_within_5e-5": true
+      }
+    },
+    "n_batch3_subsets": 18,
+    "script": "scripts/eng24_level_subsets_history_rows.py --analyse",
+    "seed": 0,
+    "timestamp_utc": "2026-10-11T06:56:53+00:00"
+  },
+  "eng25_partition_robustness": {
+    "be_grouped_last_standing": {
+      "cv3_f0": "height",
+      "cv3_f1": "area",
+      "cv3_f2": "area25",
+      "lobo_b1": "slope_right",
+      "lobo_b2": "slope_right",
+      "lobo_b3": "height"
+    },
+    "be_level_last_standing": {
+      "cv3_f0": "prominence",
+      "cv3_f1": "prominence",
+      "cv3_f2": "area",
+      "lobo_b1": "area",
+      "lobo_b2": "area",
+      "lobo_b3": "prominence"
+    },
+    "check_lobo_b3_vs_eng19_table": {
+      "all_steps_match": true,
+      "first_two_steps_match": true,
+      "max_abs_cv_diff": 9.71445146547012e-17,
+      "same_subset_each_step": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "script": "scripts/eng25_partition_robustness.py",
+    "seed": 0,
+    "spearman_top1": {
+      "cv3_f0": "height",
+      "cv3_f1": "area25",
+      "cv3_f2": "height",
+      "lobo_b1": "height",
+      "lobo_b2": "height",
+      "lobo_b3": "area25"
+    },
+    "timestamp_utc": "2026-10-11T09:11:29+00:00"
+  },
+  "eng26_nasa_lfp_correlation": {
+    "kendall_tau": 0.5,
+    "lfp_abs_r": {
+      "area": 0.7927,
+      "area25": 0.8245,
+      "area35": 0.8097,
+      "fwhm": 0.1222,
+      "height": 0.7324,
+      "position": 0.7435,
+      "prominence": 0.5928,
+      "slope_left": 0.334,
+      "slope_right": 0.5778
+    },
+    "nasa_abs_r": {
+      "area": 0.9732,
+      "area25": 0.9707,
+      "area35": 0.9717,
+      "fwhm": 0.9422,
+      "height": 0.9692,
+      "position": 0.8982,
+      "prominence": 0.9553,
+      "slope_left": 0.8966,
+      "slope_right": 0.9012
+    },
+    "script": "scripts/eng26_nasa_lfp_correlation.py",
+    "timestamp_utc": "2026-10-11T02:36:46+00:00"
+  },
+  "eng27_noisy_cells": {
+    "b3_rmse_all_dev_vs_without_noisy": {
+      "all63": [
+        0.013305016117149135,
+        0.013478911729915347
+      ],
+      "hp_hist": [
+        0.011651867576520468,
+        0.011715101801014764
+      ],
+      "level9": [
+        0.015651916437826006,
+        0.015882208825831568
+      ]
+    },
+    "checks_pass": true,
+    "noisy_cells": [
+      "b1c38",
+      "b1c39",
+      "b1c40",
+      "b1c41",
+      "b1c42",
+      "b1c43",
+      "b1c44",
+      "b1c45",
+      "b2c40",
+      "b2c41",
+      "b2c42",
+      "b2c43",
+      "b2c44",
+      "b2c45",
+      "b2c46",
+      "b2c47"
+    ],
+    "script": "scripts/eng27_noisy_cells.py",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "timestamp_utc": "2026-10-12T03:52:07+00:00"
+  },
+  "eng28_feature_sets_models": {
+    "all_checks_pass": true,
+    "best_cell": {
+      "cv_pooled_rmse_mean": 0.017574229392623965,
+      "model": "RF tuned",
+      "set": "all63"
+    },
+    "outputs": [
+      "results/eng28_feature_sets_models.json",
+      "results/eng28_feature_sets_models.csv"
+    ],
+    "script": "scripts/eng28_feature_sets_models.py",
+    "timestamp_utc": "2026-10-12T23:44:32+00:00"
+  },
+  "section_v": {
+    "n_checks": 1422,
+    "n_failed": 0,
+    "n_figures": 6,
+    "n_tables": 23,
+    "outputs": [
+      "results/section_v/SECTION_V.md",
+      "results/section_v/index.json"
+    ],
+    "script": "scripts/section_v/run_section_v.py",
+    "timestamp_utc": "2026-10-12T23:53:34+00:00"
+  }
+}
